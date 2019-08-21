@@ -26,14 +26,12 @@ def add_numbers_post():
 	  if request.method == 'GET':
 	  	return render_template('add_numbers.html')
 	  elif request.method == 'POST':
-          count_num = 0
   	      print(request.form['text'].split())
   	      total = 0
   	      try:
   	      	for str_num in request.form['text'].split():
   	      		total += int(str_num)
-			count_num += 1
-  	      	return render_template('add_numbers.html', result=str(total), count=str(count_num))
+  	      	return render_template('add_numbers.html', result=str(total))
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
 
